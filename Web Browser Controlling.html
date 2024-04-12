@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Browser Controlls</title>
+  </head>
+  <style>
+    body {
+      background-color: papayawhip;
+      color: black;
+    }
+    div {
+      height: min-content;
+      border: 2px, dashed, white;
+      display: grid;
+      grid-template-columns: auto auto auto;
+    }
+    div > button {
+      background: black;
+      width: 300px;
+      height: 150px;
+      color: rgb(255, 156, 156);
+      margin-right: 20px;
+      margin-bottom: 20px;
+    }
+  </style>
+
+  <body>
+    <center>
+      <script>
+        ///////////////////////////////////////////////////////////
+        // Window, History, Navigator Objects in JS
+        ///////////////////////////////////////////////////////////
+
+        function closeWin() {
+          window.close();
+        }
+        function kk() {
+          window.open(
+            "https://music.youtube.com/watch?v=jgcSK3P6U8Q&list=RDAMVMEoj4kxD9Tnk"
+          );
+        }
+        function closeWinAlert() {
+          let conf = window.confirm("Are you sure you want to go :");
+          if (conf) {
+            window.close();
+          } else {
+            alert("You cannot close this window.");
+          }
+        }
+        function rsizeWIn() {
+          let xVal = Number(prompt("Type the X Val :"));
+          let yVal = Number(prompt("Type the Y Val :"));
+          console.log("X Value:", xVal);
+          console.log("Y Value:", yVal);
+          window.resizeTo(xVal, yVal);
+        }
+        function bName() {
+          var appName = navigator.appName;
+          alert("The Browser Name is ", appName);
+        }
+        function pForm() {
+          var pformName = navigator.platform;
+          alert(pformName);
+        }
+        function cenTrckr() {
+          var cenable = navigator.cookieEnabled;
+          alert(cenable);
+        }
+        function appCName() {
+          var aCodeName = navigator.appCodeName;
+          alert(aCodeName);
+        }
+        function pNameFinder() {
+          var pName = navigator.product;
+          alert(pName);
+        }
+        function hFunc() {
+          var hList = history.length;
+          alert(hList);
+        }
+      </script>
+      <h1>Window, History, Navigator Objects in JS</h1>
+      <div>
+        <button onclick="closeWin()">Close this Window</button>
+        <button onclick="kk()">Kukkad Kamal</button>
+        <button onclick="closeWinAlert()">
+          Close this Window (with Prompt)
+        </button>
+        <button onclick="rsizeWIn()">Resize Window</button>
+        <button onclick="bName()">Browser Name</button>
+        <button onclick="pForm()">Platform Name</button>
+        <button onclick="cenTrckr()">Check Cookie Enabled</button>
+        <button onclick="appCName()">App Code Name</button>
+        <button onclick=" pNameFinder()">Platformfinder</button>
+        <button onclick="hFunc()">History List</button>
+      </div>
+
+      <script>
+        ///////////////////////////////////////////////////////////
+        // Date and Time Objects in JS
+        ///////////////////////////////////////////////////////////
+
+        function dtFinder() {
+          var cdate = new Date();
+          alert(cdate);
+        }
+        function dayfind() {
+          var cDay = new Date();
+          var options = { weekday: "long" };
+
+          var dayOfWeek = cDay.toLocaleDateString(undefined, options);
+          alert("Today is " + dayOfWeek);
+        }
+      </script>
+      <h1>Date and Time Objects in JS</h1>
+      <div>
+        <button onclick="dtFinder()">Alert The Current Date</button>
+        <button onclick="dayfind()">Find the current day.</button>
+        <!-- Leaving for later as I am unable to understand the code written in js  -->
+
+        <!--
+          <button onclick=""></button>
+        <button onclick=""></button>
+        <button onclick=""></button>
+        <button onclick=""></button>
+       -->
+      </div>
+
+      <script>
+        ///////////////////////////////////////////////////////////
+        // Math Object in JS
+        ///////////////////////////////////////////////////////////
+        function pRndGen() {
+          let max_val = Number(prompt("Type the max value "));
+          let rndVal = Math.floor(Math.random() * max_val);
+          let otptVal = "The random value is : " + rndVal;
+
+          alert(otptVal);
+        }
+        function fctrial() {
+          var inpVal = Number(
+            prompt("Type the number whoose factorial you want : ")
+          );
+          var rVal = 1;
+          for (let loopCnt = 1; loopCnt <= inpVal; loopCnt++) {
+            rVal *= loopCnt;
+          }
+          str_val = "The final factorial is " + rVal;
+          alert(str_val);
+        }
+        function fbser() {
+          var indInp = Number(prompt("Type the value for index :"));
+          fVal = 0;
+          sVal = 1;
+          for (let lCnt = 1; lCnt <= indInp; lCnt++) {
+            fVal += sVal;
+            sVal = fVal + sVal;
+          }
+          alert(`The value at the ${indInp} is ${sVal}`);
+        }
+      </script>
+
+      <h1>Math Object in JS</h1>
+      <div>
+        <button onclick="pRndGen()">Random Number Generator</button>
+        <button onclick="fctrial()">Factorial in JS</button>
+        <button onclick="fbser()">Fibonacci Series</button>
+        <button onclick=""></button>
+        <button onclick=""></button>
+        <button onclick=""></button>
+      </div>
+    </center>
+
+    <!-- 
+        <button onclick="" > </button>
+    -->
+  </body>
+</html>
